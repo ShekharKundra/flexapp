@@ -1,0 +1,180 @@
+<% include ../partial/header %>
+
+<div class="container-fluid" style="background-color:floralwhite; ">
+    <h2>
+        Bill of Quantities Chart
+    </h2>
+    <form method="post" action="/srrstock/findboq">
+
+
+        <div class="row" style="background-color:#EAF2F8; font-size:20px; padding:10px;">
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <select class="form-control" name="arch" id="arch">
+                        <option value="" disabled selected>Search by Item</option>
+                        <option value="REJ Single Arch">REJ Single Arch</option>
+                        <option value="REJ Double Arch">REJ Double Arch</option>
+                        <option value="REJ Hand Wrap">REJ Hand Wrap</option>
+
+                    </select></span></div>
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <select class="form-control" name="size" id="size">
+                        <option value="" disabled selected>Search by Size</option>
+                        <option value="25">25</option>
+                        <option value="32">32</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="65">65</option>
+                        <option value="80">80</option>
+                        <option value="100">100</option>
+                        <option value="125">125</option>
+                        <option value="150">150</option>
+                        <option value="200">200</option>
+                        <option value="250">250</option>
+                        <option value="300">300</option>
+                        <option value="350">350</option>
+                        <option value="400">400</option>
+                        <option value="450">450</option>
+                        <option value="500">500</option>
+                        <option value="550">550</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="750">750</option>
+                    </select></span>
+            </div>
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <select class="form-control" name="drilling" id="drilling">
+                        <option value="" disabled selected>Search by Drilling</option>
+                        <option value="Table D">Table D</option>
+                        <option value="ANSI">ANSI</option>
+                        <option value="Table E">Table E</option>
+                        <option value="BS 4504">BS 4504</option>
+                        <option value="OT">Other</option>
+                    </select> </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <select class="form-control form-control-sm" name="prating" id="prating">
+                        <option value="" disabled selected>Search by Pressure Rating</option>
+                        <option value="PN 10">PN 10</option>
+                        <option value="PN 16">PN 16</option>
+                        <option value="PN 20">PN 20</option>
+                    </select>
+                </span>
+            </div>
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <button type="submit" class="btn btn-primary">Find</button>
+                </span>
+            </div>
+
+        </div>
+
+    </form>
+
+    <div class="row" style="background-color:#F5B041; font-size:18px; padding:5px;">
+        <div class="col-sm-2" value="" align=center>
+            <span>Item
+            </span>
+        </div>
+        <div class="col-sm-1" value="" align=center>
+            <span>Size
+
+            </span>
+        </div>
+        <div class="col-sm-1" value="" align=center>
+            <span>Drilling
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span>Pressure Rating
+            </span>
+        </div>
+        <div class="col-sm-1" value="" align=center>
+            <span>SRR
+            </span>
+        </div>
+        <div class="col-sm-1" value="" align=center>
+            <span>CU
+            </span>
+        </div>
+        <div class="col-sm-1" value="" align=center>
+            <span>Tie Rod
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span>Size
+            </span>
+        </div>
+        <div class="col-sm-1" value="" align=center>
+            <span>
+            </span>
+        </div>
+    </div>
+
+    <% data.forEach(function(el, index) {%>
+    <div class="row" style="background-color:#FDFEFE;border-bottom: 1px solid orange;font-size: 16px;">
+        <div class="col-sm-2" align=center style="padding: 15px">
+            <span>
+                <%= el.itemname %>
+            </span>
+        </div>
+        <div class="col-sm-1" align=center style="padding: 15px">
+            <span>
+                <%= el.itemsize %>
+            </span>
+        </div>
+        <div class="col-sm-1" align=center style="padding: 15px">
+            <span>
+                <%= el.itemdrilling %>
+            </span>
+        </div>
+        <div class="col-sm-2" align=center style="padding: 15px">
+            <span>
+                <%= el.itemprating %>
+            </span>
+        </div>
+        <div class="col-sm-1" align=center style="padding: 15px">
+            <span>
+                <%= el.srrquantity %>
+            </span>
+        </div>
+        <div class="col-sm-1" align=center style="padding: 15px">
+            <span>
+                <%= el.cuquantity %>
+            </span>
+        </div>
+        <div class="col-sm-1" align=center style="padding: 15px">
+            <span>
+                <%= el.trquantity %>
+            </span>
+        </div>
+        <div class="col-sm-2" align=center style="padding: 15px">
+            <span>
+                <%= el.trsize %>
+            </span>
+        </div>
+        <div class="col-sm-1" align=center style="padding: 5px">
+            <span>
+
+
+                <form method="POST" action="../srrstock/edit/<%= el._id %>" style=" display:inline!important;">
+                    <a href="#" data-toggle="tooltip" title="Edit BOQ"> <button type="submit" class="btn"> <i class="fa fa-edit"
+                                style="font-size:20px;color:black"></i></button></a>
+                </form>
+            </span>
+        </div>
+    </div>
+    <% }) %>
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+<% include ../partial/footer %>

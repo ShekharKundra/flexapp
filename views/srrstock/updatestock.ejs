@@ -1,0 +1,39 @@
+<% include ../partial/header %>
+
+<div class="container">
+    <h2>
+        <b>Update Stock</b>
+    </h2>
+
+
+    <form method="post" action="/srrstock/updatesrrstock/<%= data._id %>">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3" align=center style="background-color:orange; font-size:20px;">
+                    <span><b>Modify :
+                            <%= data.itemName %> and
+                            <%= data.size %></b><br>
+
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3" align=center style="background-color:whitesmoke;border-bottom: 1px solid orange; padding:7px;">
+                    <span><br>
+                        <input type="text" class="form-control form-control-sm" id="quantity" name="quantity" required
+                            value="<%= data.quantity %> ">
+                    </span>
+                </div>
+            </div>
+            <p>
+                <center>
+                    <button type="submit" class="btn btn-success">Modify</button>
+                    <button type="" class="btn btn-info">Cancel</button>
+
+                </center>
+            </p>
+        </div>
+    </form>
+</div>
+
+<% include ../partial/footer %>

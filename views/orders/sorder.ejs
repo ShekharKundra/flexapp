@@ -1,0 +1,74 @@
+<% include ../partial/header %>
+
+<div class="container-fluid" style="background-color:floralwhite; ">
+  <h2>Sale Order</h2>
+  <form method="POST">
+    <p>
+      <div class="row" style="background-color:whitesmoke; font-size: 18px; padding:20px">
+
+        <div class="col-sm-6">
+          <span>Customer Name :
+            <%= data.companyname %> ,
+            <%= data.state %> ,
+            <%= data.city %> ,
+            <%= data.address1 %> </span>
+          <input type="hidden" id="companyid" name="companyid" value=<%=data.id %> >
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+
+
+      </div>
+
+      <div class="row" style="background-color:whitesmoke; font-size: 18px; padding:20px">
+        <div class="col-sm-2" class="form-control form-control-sm">
+          <span>Order Details</span>
+        </div>
+        <div class="col-sm-2">
+          <span><input type="text" class="form-control form-control-sm" id="onum" placeholder="Order Number" name="onum"
+              required> </span>
+        </div>
+        <div class="col-sm-2">
+          <span><a href="#" data-toggle="tooltip" title="Enter Order Date"><input type="date" class="form-control form-control-sm"
+                id="odate" name="odate" required></a>
+        </div>
+        <div class="col-sm-2">
+          <span><select class="form-control form-control-sm" name="status" id="status" required>
+              <option value="" disabled selected>Order Status</option>
+              <option id="" value="LIVE">LIVE</option>
+              <option id="" value="Payment Against PI">Payment against PI</option>
+              <option id="" value="Payment on Credit">Payment on Credit</option>
+              <option id="" value="Manufacturing Clearance">Manufacturing Clearance</option>
+            </select> </div>
+
+        <div class="col-sm-2">
+          <span><a href="#" data-toggle="tooltip" title="Enter Delivery Date"><input type="date" class="form-control form-control-sm"
+                id="odate" name="ddate" required></a>
+        </div>
+        <div class="col-sm-2">
+          <span><select class="form-control form-control-sm" name="jobstatus" id="jobstatus" required>
+              <option value="" disabled selected> Job Order Status</option>
+              <option id="" value="Pending">Pending</option>
+              <option id="" value="Dispatched" disabled>Dispatched</option>
+              <option id="" value="Partial Dispatched" disabled>Partial Dispatched</option>
+              <option id="" value="Cancelled" disabled>Cancelled</option>
+            </select></div>
+      </div>
+    </p>
+
+    <p>
+      <center><input type="reset" value="Cancel" class="btn btn-warning">&nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-success" formaction="/orders/addsorder">Next</button>
+    </p>
+
+  </form>
+
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+<% include ../partial/footer %>

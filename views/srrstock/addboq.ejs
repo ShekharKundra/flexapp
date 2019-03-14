@@ -1,0 +1,182 @@
+<% include ../partial/header %>
+
+<div class="container-fluid" style="background-color:floralwhite;">
+    <h2>
+        Add Bill of Quantity
+    </h2>
+    <form method="POST" action="/srrstock/addnewboq">
+
+        <div class="row" style="background-color:#F5B041; font-size: 18px; padding:5px">
+            <div class="col-sm-3" value="" align=center>
+                <span>Item
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>Size
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>Drilling
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>Pressure Rating
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row" style="background-color:whitesmoke; padding:10px;">
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <select class="form-control" name="arch" id="arch" required>
+                        <option value="" disabled selected>Select Item</option>
+                        <option value="REJ Single Arch">REJ Single Arch</option>
+                        <option value="REJ Double Arch">REJ Double Arch</option>
+                        <option value="REJ Hand Wrap">REJ Hand Wrap</option>
+                    </select>
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <select class="form-control" name="size" id="size" required>
+                        <option value="" disabled selected>Select Size</option>
+                        <option value="25">25</option>
+                        <option value="32">32</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="65">65</option>
+                        <option value="80">80</option>
+                        <option value="100">100</option>
+                        <option value="125">125</option>
+                        <option value="150">150</option>
+                        <option value="200">200</option>
+                        <option value="250">250</option>
+                        <option value="300">300</option>
+                        <option value="350">350</option>
+                        <option value="400">400</option>
+                        <option value="450">450</option>
+                        <option value="500">500</option>
+                        <option value="550">550</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="750">750</option>
+                    </select></span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <select class="form-control" name="drilling" id="drilling" required>
+                        <option value="" disabled selected>Select Drilling</option>
+                        <option value="Table D">Table D</option>
+                        <option value="ANSI">ANSI</option>
+                        <option value="Table E">Table E</option>
+                        <option value="BS 4504">BS 4504</option>
+                        <option value="OT">Other</option>
+                    </select></span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <select class="form-control form-control-sm" name="prating" id="prating" required>
+                        <option value="" disabled selected>Pressure Rating</option>
+                        <option value="PN 10">PN 10</option>
+                        <option value="PN 16">PN 16</option>
+                        <option value="PN 20">PN 20</option>
+                    </select>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row" style=" padding:10px;">
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <input type="text" class="form-control" name="" id="" value="SRR" readonly>
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <input type="number" class="form-control" name="srrqty" id="srrqty" value="" placeholder="Add SRR Quantity"
+                        required>
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <input type="hidden" class="form-control" name="srrsize" id="srrsize" value="size" readonly hidden>
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <input type="hidden" class="form-control" name="srrdrilling" id="srrdrilling" value="" readonly>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row" style=" padding:10px;">
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <input type="text" class="form-control" name="" id="" value="Control Unit" readonly>
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <input type="number" class="form-control" name="cuqty" id="cuqty" value="" placeholder="Add Control Unit Quantity"
+                        required>
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <input type="hidden" class="form-control" name="cusize" id="cusize" value="" readonly>
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <input type="hidden" class="form-control" name="cudrilling" id="cudrilling" value="" readonly>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="row" style=" padding:10px;">
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <input type="text" class="form-control" name="" id="" value="Tie Rod" readonly>
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <input type="number" class="form-control" name="trqty" id="trqty" value="" placeholder="Add Tie Rod Quantity"
+                        required>
+                </span>
+            </div>
+            <div class="col-sm-3" value="" align=center>
+                <span>
+                    <select class="form-control" name="rodsize" id="rodsize">
+                        <option value="" disabled selected>Select Size</option>
+                        <option value=" M16 X 14">M16 X 14"</option>
+                        <option value="M16 X 17">M16 X 17"</option>
+                        <option value="3/4 X 17">3/4" X 17"</option>
+                        <option value="M16 X 22">M16 X 22"</option>
+                        <option value="M24 X 17">M24 X 17"</option>
+                    </select>
+                </span>
+            </div>
+
+
+        </div>
+
+        <p>
+            <center>
+                <button type="submit" class="btn btn-info">Add New</button>&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="Cancel" class="btn btn-warning">
+
+            </center>
+        </p>
+
+
+
+
+    </form>
+</div>
+
+<% include ../partial/footer %>

@@ -1,0 +1,89 @@
+<% include ../partial/header %>
+
+
+<div class="container">
+  <h2>Rubber Expansion Joint - <B>Material Management</B></h2>
+  <a href="../orders/sorder"><button type="button" class="btn btn-warning">Add a New Sale Order</button></a>
+  &nbsp;&nbsp;
+  <a href="../srrstock/addstock"><button type="button" class="btn btn-warning">Add New Stock</button></a>
+
+  <hr noshade>
+
+  <div class="container-fluid">
+    <% data.forEach(function(el, index) {%>
+    <div class="row" style="background-color: floralwhite; font-size: 16px" align=left>
+      <div class="col-sm-6" style="padding:10px;" value="">
+        <span>
+          <i class="far fa-plus-square" style="color:orange; font-size: 28px"></i> &nbsp; Order Number
+          <%= el.ordernumber %> from
+          <%= el.company %>, received on
+          <%= el.orderdate %>.
+
+        </span>
+      </div>
+    </div>
+    <% }) %>
+    <br><br>
+
+    <div class="row" style="background-color: floralwhite; font-size: 16px" align=left>
+      <div class="col-sm-5" style="padding:10px; background-color: floralwhite;" value="">
+        <span>
+          <i class="far fa-plus-square" style="color:orange; font-size: 28px"></i> &nbsp;
+
+        </span>
+      </div>
+      <div class="col-sm-5" style="padding:10px; background-color: floralwhite;" value="">
+        <span>
+          <i class="far fa-plus-square" style="color:orange; font-size: 28px"></i> &nbsp;
+
+        </span>
+      </div>
+      <div class="col-sm-1" style="padding:10px;" value="">
+        <span>
+          &nbsp;
+
+        </span>
+      </div>
+      <div class="col-sm-5" style="padding:10px; background-color: floralwhite;" value="">
+        <span>
+          <i class="far fa-plus-square" style="color:orange; font-size: 28px"></i> &nbsp;
+
+        </span>
+      </div>
+    </div>
+    <p>
+      <div class="row" style="background-color: floralwhite; font-size: 16px" align=left>
+        <div class="col-sm-12" style="padding:10px;" value="">
+          <span>
+            <i class="far fa-plus-square" style="color:orange; font-size: 28px"></i> &nbsp;
+
+          </span>
+        </div>
+      </div>
+    </p>
+
+    <p>
+      <div class="row" style="background-color: floralwhite; font-size: 16px" align=left>
+        <div class="col-sm-12" style="padding:10px;" value="">
+          <span>
+            <i class="far fa-plus-square" style="color:orange; font-size: 28px"></i> &nbsp;
+
+          </span>
+        </div>
+      </div>
+    </p>
+    <p>
+      <div class="row" style="background-color: floralwhite; font-size: 16px" align=left>
+        <div class="col-sm-12" style="padding:10px;" value="">
+          <span>
+            <i class="far fa-plus-square" style="color:orange; font-size: 28px"></i> &nbsp;
+
+          </span>
+        </div>
+      </div>
+
+    </p>
+  </div>
+</div>
+
+<% include ../partial/footer %>

@@ -1,0 +1,171 @@
+<% include ../partial/header %>
+
+<div class="container-fluid" style="background-color:floralwhite">
+    <h2>
+        Sale Order History
+    </h2>
+
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <form method="post" action="/orders/findsaleorderitem">
+
+        <div class="row" style="background-color:#EAF2F8; font-size:20px; padding:10px;">
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <input type="text" class="form-control form-control-sm" id="onum" name="onum" placeholder="Search by Order No"></span>
+            </div>
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <a href="#" data-toggle="tooltip" title="Search by Order Date"><input type="date" value="Order Date"
+                            class="form-control form-control-sm" id="odate" placeholder="Order Date" name="odate"></a></span>
+            </div>
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <input type="text" class="form-control form-control-sm" id="customer" name="customer" placeholder="Search by Customer"></span>
+            </div>
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <select class="form-control form-control-sm" name="status" id="status">
+                        <option value="" disabled selected>Search by Item</option>
+                        <option id="" value="REJ Single Arch">REJ Single Arch</option>
+                        <option id="" value="REJ Double Arch">REJ Double Arch</option>
+                        <option id="" value="REJ Hand Wrap">REJ Hand Wrap</option>
+                    </select> </span>
+            </div>
+            <div class="col-sm-1" value="" align=center>
+                <span>
+                    <select class="form-control form-control-sm" name="status" id="status">
+                        <option value="" disabled selected> Size</option>
+                        <option value="25">25</option>
+                        <option value="32">32</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="65">65</option>
+                        <option value="80">80</option>
+                        <option value="100">100</option>
+                        <option value="125">125</option>
+                        <option value="150">150</option>
+                        <option value="200">200</option>
+                        <option value="250">250</option>
+                        <option value="300">300</option>
+                        <option value="350">350</option>
+                        <option value="400">400</option>
+                        <option value="450">450</option>
+                        <option value="500">500</option>
+                        <option value="550">550</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="750">750</option>
+                    </select> </span>
+            </div>
+
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <select class="form-control form-control-sm" name="status" id="status">
+                        <option value="" disabled selected> Drilling</option>
+                        <option value="Table D">Table D</option>
+                        <option value="ANSI">ANSI</option>
+                        <option value="Table E">Table E</option>
+                        <option value="BS 4504">BS 4504</option>
+                        <option value="OT">Other</option>
+                    </select> </span>
+            </div>
+
+            <div class="col-sm-1" value="" align=center>
+                <span>
+                    <button type="submit" class="btn btn-primary">Find</button>
+                </span>
+            </div>
+        </div>
+
+    </form>
+
+
+    <div class="row" style="background-color:#F5B041; font-size:18px; padding:5px">
+        <div class="col-sm-2" value="" align=center>
+            <span>Order Number
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span> Date
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span>Customer Name
+            </span>
+        </div>
+
+        <div class="col-sm-2" value="" align=center>
+            <span>Item
+            </span>
+        </div>
+        <div class="col-sm-1" value="" align=center>
+            <span>Size
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span>Drilling
+            </span>
+        </div>
+        <div class="col-sm-1" value="" align=center>
+            <span>Quantity
+            </span>
+        </div>
+
+    </div>
+
+    <% data.forEach(function(el, index) {%>
+    <div class="row" style="background-color:#FDFEFE; border-bottom: 1px solid orange;  font-size: 16px">
+        <div class="col-sm-2" style="padding:15px;" value="" align=center>
+            <span>
+                <%= el.ordernumber %>
+            </span>
+        </div>
+        <div class="col-sm-2" style="padding:15px;" value="" align=center>
+            <span>
+                <%= el.orderdate %>
+            </span>
+        </div>
+        <div class="col-sm-2" style="padding:15px;" value="" align=center>
+            <span>
+                <%= el.company%>
+            </span>
+        </div>
+
+        <div class="col-sm-2" style="padding:15px;" value="" align=center>
+            <span>
+                <%= el.orderarch%>
+            </span>
+        </div>
+        <div class="col-sm-1" style="padding:15px;" value="" align=center>
+            <span>
+                <%= el.ordersize%>
+            </span>
+        </div>
+        <div class="col-sm-2" style="padding:15px;" value="" align=center>
+            <span>
+                <%= el.orderdrilling%>
+            </span>
+        </div>
+        <div class="col-sm-1" style="padding:15px;" value="" align=center>
+            <span>
+                <%= el.orderquantity%>
+            </span>
+        </div>
+
+    </div>
+    <% }) %>
+
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+<% include ../partial/footer %>

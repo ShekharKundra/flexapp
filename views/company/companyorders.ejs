@@ -1,0 +1,104 @@
+<% include ../partial/header %>
+
+<div class="container-fluid" style="background-color:floralwhite; ">
+    <center>
+        <h2>
+            All <b>
+                <%= companydata.companyname %> </b>Orders
+        </h2>
+    </center>
+    <form method="post" action="/company/companyorders/<%= companydata.id %> ">
+
+
+        <div class="row" style="background-color:#EAF2F8; font-size:20px; padding:10px;">
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <input type="text" class="form-control form-control-sm" id="onum" name="onum" placeholder="Search by Order No"></span>
+            </div>
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <a href="#" data-toggle="tooltip" title="Search by Order Date"> <input type="date" class="form-control form-control-sm"
+                            id="odate" name="odate" placeholder="Search by Order Date"></a></span>
+            </div>
+            <div class="col-sm-2" value="" align=center>
+                <span><select class="form-control form-control-sm" name="jobstatus" id="jobstatus">
+                        <option value="" disabled selected>Search by Status</option>
+                        <option id="" value="Pending">Pending</option>
+                        <option id="" value="Dispatched">Dispatched</option>
+                        <option id="" value="Partial Dispatched">Partial Dispatched</option>
+                        <option id="" value="Cancelled">Cancelled</option>
+                    </select>
+                </span>
+            </div>
+            <div class="col-sm-6" value="" align=center>
+                <span>
+                    <button type="submit" class="btn btn-primary">Find</button>
+                </span>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="row" style="background-color:#F5B041; font-size:18px; padding:5px;">
+        <div class="col-sm-2" value="" align=center>
+            <span>Order Number
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span>Date
+
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span>Delivery Date
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span>Status
+            </span>
+        </div>
+        <div class="col-sm-3" value="" align=center>
+            <span>Dispatch Date
+            </span>
+        </div>
+    </div>
+
+    <% ordermasterdata.forEach(function (data, index){ %>
+    <div class="row" style="background-color:#FDFEFE;border-bottom: 1px solid orange; font-size:16px;">
+        <div class="col-sm-2" align=center style="padding-top:5px">
+            <span>
+                <form method="POST">
+                    <button type="submit" class="btn" formaction="/orders/neworder/<%= data._id %>" style="font-size:18px;color:#3498DB;">
+                        <%= data.ordernumber %>
+                    </button>
+                </form>
+
+            </span>
+        </div>
+        <div class="col-sm-2" align=center style="padding-top:15px">
+            <span>
+                <%= data.orderdate %>
+            </span>
+        </div>
+        <div class="col-sm-2" align=center style="padding-top:15px">
+            <span>
+                <%= data.deliverydate %>
+            </span>
+        </div>
+        <div class="col-sm-2" align=center style="padding-top:15px">
+            <span>
+                <%= data.orderstatus %>
+            </span>
+        </div>
+        <div class="col-sm-3" align=center style="padding-top:15px">
+            <span>
+            </span>
+        </div>
+    </div>
+
+    <% }) %>
+
+</div>
+
+
+<% include ../partial/footer %>

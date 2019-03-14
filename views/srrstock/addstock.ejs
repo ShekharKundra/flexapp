@@ -1,0 +1,124 @@
+<% include ../partial/header %>
+
+<div class="container-fluid" style="background-color:floralwhite;">
+  <h2>
+    Add Stock
+  </h2>
+  <form method="POST" action="/srrstock/addsrrstock">
+
+    <div class="row" style="background-color:#F5B041; font-size: 18px; padding:5px">
+      <div class="col-sm-3" value="" align=center>
+        <span>Item
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span>Size
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span>Drilling Standard
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span>Quantity
+        </span>
+      </div>
+
+    </div>
+
+    <div class="row" style="background-color:whitesmoke; padding:10px;">
+      <div class="col-sm-3" value="" align=center>
+        <span>
+          <select class="form-control" name="arch" id="arch" required>
+            <option value="" disabled selected>Select Item</option>
+            <option value="REJ Single Arch">REJ Single Arch</option>
+            <option value="REJ Double Arch">REJ Double Arch</option>
+            <option value="REJ Hand Wrap">REJ Hand Wrap</option>
+            <option value="SRR">Split Retaining Ring</option>
+            <option value="Control Unit">Control Unit</option>
+            <option value="Tie Rod">TIE Rod</option>
+          </select>
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span>
+          <select class="form-control" name="size" id="size" required>
+            <option value="" disabled selected>Select Size</option>
+            <option value="25">25</option>
+            <option value="32">32</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <option value="65">65</option>
+            <option value="80">80</option>
+            <option value="100">100</option>
+            <option value="125">125</option>
+            <option value="150">150</option>
+            <option value="200">200</option>
+            <option value="250">250</option>
+            <option value="300">300</option>
+            <option value="350">350</option>
+            <option value="400">400</option>
+            <option value="450">450</option>
+            <option value="500">500</option>
+            <option value="550">550</option>
+            <option value="600">600</option>
+            <option value="700">700</option>
+            <option value="750">750</option>
+            <option value=" M16 X 14">M16 X 14"</option>
+            <option value="M16 X 17">M16 X 17"</option>
+            <option value="3/4 X 17">3/4" X 17"</option>
+            <option value="M16 X 22">M16 X 22"</option>
+            <option value="M24 X 17">M24 X 17"</option>
+          </select></span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span>
+          <select class="form-control" name="drilling" id="drilling" required>
+            <option value="" disabled selected>Select Drilling</option>
+            <option value="None">None</option>
+            <option value="Table D">Table D</option>
+            <option value="ANSI">ANSI</option>
+            <option value="Table E">Table E</option>
+            <option value="BS 4504">BS 4504</option>
+            <option value="OT">Other</option>
+          </select> </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span>
+          <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Add Quantity" required></td>
+        </span>
+      </div>
+
+    </div>
+
+    <!-- <div class="row" style="background-color:whitesmoke; padding:10px;">
+      <div class="col-sm-3" value="" align=center>
+        <span>
+          <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Add Maximum Stock Level"
+            required></td>
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span>
+          <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Add Minimum Stock Level"
+            required></td>
+        </span>
+      </div>
+
+    </div> -->
+
+    <p>
+      <center>
+        <button type="submit" class="btn btn-info">Add New</button>&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="Cancel" class="btn btn-warning">
+
+      </center>
+    </p>
+
+
+
+
+  </form>
+</div>
+
+<% include ../partial/footer %>

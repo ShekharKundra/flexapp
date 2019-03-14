@@ -1,0 +1,143 @@
+<% include ../partial/header %>
+
+<!-- page displayed after new order is submitted, has options for dispatch/part dispatch/ cancel or hold order -->
+<div class="container-fluid" style="background-color:floralwhite; ">
+  <h2>Sale Order
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button type="submit" class="btn btn-success"
+      formaction="/orders/dispatchorder/<%= ordermasterdata.id %>">Dispatch</button>
+    <button type="submit" class="btn btn-info" formaction="/orders/partialdispatch/<%= ordermasterdata.id %>">Partial
+      Dispatch</button>
+    <button type="submit" class="btn btn-danger"
+      formaction="/orders/neworder/<%= ordermasterdata.id %>">Cancel</button>
+    <button type="submit" class="btn btn-warning" formaction="/orders/holdorder/<%= ordermasterdata.id %>">Hold</button>
+
+  </h2>
+  <form method="POST">
+    <p>
+
+
+
+      <div class="row" style="background-color:whitesmoke; font-size: 18px; padding:10px">
+        <div class="col-sm-12">
+          <span><input type="text" class="form-control  form-control-sm"
+              value="<%= companydata.companyname %>,  <%= companydata.state %>, <%= companydata.city %>, <%= companydata.address1 %>"
+              readonly> </span>
+          <input type="hidden" id="orderid" name="orderid" value="<%= ordermasterdata.id %>">
+        </div>
+        <div class="col-sm-12">
+
+          <div class="form-group row">
+            <div class="col-xs-3">
+              <label for="ex1"></label>
+              <input class="form-control  form-control-sm" id="ex1" type="text"
+                value="Order Number : <%= ordermasterdata.ordernumber %>" readonly>
+            </div>
+
+            <div class="col-xs-3">
+              <label for="ex1"></label>
+              <input class="form-control form-control-sm" id="ex1" type="text"
+                value="Delivery Date : <%= ordermasterdata.deliverydate %>" readonly>
+            </div>
+            <div class="col-xs-3">
+              <label for="ex2"></label>
+              <input class="form-control form-control-sm" id="ex2" type="text"
+                value="Job Order :  <%= ordermasterdata.orderstatus %>" readonly>
+            </div>
+            <div class="col-xs-3">
+              <label for="ex2"></label>
+              <input class="form-control form-control-sm" id="ex2" type="text"
+                value="Status :  <%= ordermasterdata.status %>" readonly>
+            </div>
+            <div class="col-xs-3">
+              <label for="ex1"></label>
+              <input class="form-control form-control-sm" id="ex1" type="text"
+                value="Order Date : <%= ordermasterdata.orderdate %>" readonly>
+            </div>
+            <div class="col-xs-3">
+              <label for="ex1"></label>
+              <input class="form-control form-control-sm" id="ex1" type="text"
+                value="Dispatch Date : <%= ordermasterdata.orderdate %>" readonly>
+            </div>
+
+
+          </div> </span>
+          <input type="hidden" id="orderid" name="orderid" value=<%=ordermasterdata.id %>>
+        </div>
+
+
+      </div>
+
+      <div class="row" style="background-color: #F5B041; font-size: 16px" align=left>
+
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>Arch
+          </span>
+        </div>
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>Size
+          </span>
+        </div>
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>Drilling
+          </span>
+        </div>
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>Pressure Rating
+          </span>
+        </div>
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>Control Unit
+          </span>
+        </div>
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>Quantity
+          </span>
+        </div>
+      </div>
+
+      <% if(orderdetaildata) { %>
+      <% orderdetaildata.forEach(function(el, index) {%>
+      <div class="row" style="background-color: #FDFEFE; font-size: 16px" align=left>
+
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>
+            <%= el.orderarch %>
+          </span>
+        </div>
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>
+            <%= el.ordersize %>
+          </span>
+        </div>
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>
+            <%= el.orderdrilling %>
+          </span>
+        </div>
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>
+            <%= el.orderprating %>
+          </span>
+        </div>
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span>
+            <%= el.ordercontrolunit %>
+          </span>
+        </div>
+        <div class="col-sm-2" style="padding:10px;" align=center>
+          <span> <%= el.orderquantity %>
+          </span>
+        </div>
+      </div>
+      <% }) %>
+      <% } %>
+
+  </form>
+
+</div>
+
+<% include ../partial/footer %>

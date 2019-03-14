@@ -1,0 +1,90 @@
+<% include ../partial/header %>
+
+<head>
+    <style>
+        #sorder tr:hover {background-color: #ddd;}
+        #cone tr:hover {background-color: #ddd;}
+        #ctwo tr:hover {background-color: #ddd;}
+ </style>
+</head>
+
+<div class="container">
+    <h2>
+        <b>Sale Order</b>
+    </h2>
+    <form class="form-inline" align=center method="POST" action="/" id="">
+       
+    <table class = "table" id=cone>
+            <tr><th align = center>Customer Name</th><td>M Trends</td></tr>
+            </table><table class = "table" id=ctwo>
+              <tr>
+            <tr>
+                <th>Order Number</th><td>1456</td>
+                <th>Order Date</th><td>18-1-2019</td>
+                <th>Status</th><td>LIVE</td>
+                <th>Delivery Date</th><td>2-2-2019</td>
+            </tr>
+        </table>
+    </form>
+        <table class="table" id=sorder>
+            <thead>
+                <tr align=center>
+
+                    <th bgcolor=orange>Arch / Type</th>
+                    <th bgcolor=orange>Size (MM)</th>
+                    <th bgcolor=orange>Drilling Standard</th>
+                    <th bgcolor=orange>Pressure Rating</th>
+                    <th bgcolor=orange>Control Unit</th>
+                    <th bgcolor=orange>Quantity</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td><input type="text" class="form-control" value="REJSA" readonly></td>
+                    <td><input type="text" class="form-control" value="50" readonly></td>
+                    <td><input type="text" class="form-control" value="Table D" readonly></td>
+                    <td><input type="text" class="form-control" value="PN 10" readonly></td>
+                    <td><input type="text" class="form-control" value="With Control Unit" readonly></td>
+                    <td><input type="text" class="form-control" value="10" readonly></td>
+                </tr>
+                <tr align=center>
+
+                    <td><input type="text" class="form-control" value="REJSA" readonly></td>
+                    <td><input type="text" class="form-control" value="100" readonly></td>
+                    <td><input type="text" class="form-control" value="Table E" readonly></td>
+                    <td><input type="text" class="form-control" value="PN 16" readonly></td>
+                    <td><input type="text" class="form-control" value="With Control Unit" readonly></td>
+                    <td><input type="text" class="form-control" value="5" readonly></td>
+                </tr>
+                <tr align=center>
+
+                    <td><input type="text" class="form-control" value="REJDA" readonly></td>
+                    <td><input type="text" class="form-control" value="200" readonly></td>
+                    <td><input type="text" class="form-control" value="ANSI" readonly></td>
+                    <td><input type="text" class="form-control" value="PN 16" readonly></td>
+                    <td><input type="text" class="form-control" value="With Control Unit" readonly></td>
+                    <td><input type="text" class="form-control" value="10" readonly></td>
+                </tr>
+                <tr align=center>
+
+                    <td><input type="text" class="form-control" value="REJDA" readonly></td>
+                    <td><input type="text" class="form-control" value="300" readonly></td>
+                    <td><input type="text" class="form-control" value="Table E" readonly></td>
+                    <td><input type="text" class="form-control" value="PN 20" readonly></td>
+                    <td><input type="text" class="form-control" value="With Control Unit" readonly></td>
+                    <td><input type="text" class="form-control" value="5" readonly></td>
+                </tr>
+                </tbody></table>
+                <p>
+                        <center><a href = "dso"><button type="button" class="btn btn-success">Dispatch </button></a>&nbsp;
+                            <button type="button" class="btn btn-danger"> Cancel</button>&nbsp;<br>
+                          </center> <p></p>
+                          <center><p><button type="button" class="btn btn-info">In Process</button></p></center>
+                </p>
+                </form>
+                </div>
+                <% include ../partial/footer %>
+                

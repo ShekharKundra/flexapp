@@ -1,0 +1,131 @@
+<% include ../partial/header %>
+
+
+<div class="container-fluid" style="background-color:floralwhite; ">
+  <h2>
+    All Sale Orders
+  </h2>
+  <form method="post" action="/orders/findallorders">
+
+    <div class="row" style="background-color:#EAF2F8; font-size:20px; padding:10px;">
+      <div class="col-sm-2" value="" align=center>
+        <span>
+          <input type="text" class="form-control form-control-sm" id="onum" name="onum" placeholder="Search by Order No"></span>
+      </div>
+      <div class="col-sm-2" value="" align=center>
+        <span>
+          <a href="#" data-toggle="tooltip" title="Search by Order Date"><input type="date" value="Order Date" class="form-control form-control-sm"
+              id="odate" placeholder="Order Date" name="odate"></a></span>
+      </div>
+      <div class="col-sm-2" value="" align=center>
+        <span>
+          <input type="text" class="form-control form-control-sm" id="customer" name="customer" placeholder="Search by Customer"></span>
+      </div>
+      <div class="col-sm-2" value="" align=center>
+        <span>
+          <select class="form-control form-control-sm" name="jobstatus" id="jobstatus">
+            <option value="" disabled selected>Search by Status</option>
+            <option id="" value="Pending">Pending</option>
+            <option id="" value="Dispatched">Dispatched</option>
+            <option id="" value="Partial Dispatched">Partial Dispatched</option>
+            <option id="" value="Cancelled">Cancelled</option>
+          </select> </span>
+      </div>
+      <div class="col-sm-2" value="" align=center>
+        <span>
+          <a href="#" data-toggle="tooltip" title="Search by Delivery Date"><input type="date" class="form-control form-control-sm"
+              id="odate" name="ddate"></a></span>
+      </div>
+      <div class="col-sm-2" value="" align=center>
+        <span>
+          <button type="submit" class="btn btn-primary">Find</button>
+        </span>
+      </div>
+    </div>
+
+  </form>
+
+
+  <div class="row" style="background-color:#F5B041; font-size:18px; padding:5px">
+    <div class="col-sm-2" value="" align=center>
+      <span>Order Number
+      </span>
+    </div>
+    <div class="col-sm-2" value="" align=center>
+      <span> Date
+      </span>
+    </div>
+    <div class="col-sm-2" value="" align=center>
+      <span>Customer Name
+      </span>
+    </div>
+
+    <div class="col-sm-2" value="" align=center>
+      <span>Delivery Date
+      </span>
+    </div>
+    <div class="col-sm-2" value="" align=center>
+      <span>Dispatch Date
+      </span>
+    </div>
+    <div class="col-sm-2" value="" align=center>
+      <span>
+      </span>
+    </div>
+  </div>
+
+  <% data.forEach(function(el, index) {%>
+  <div class="row" style="background-color:#FDFEFE; border-bottom: 1px solid orange;  font-size: 16px">
+    <div class="col-sm-2" style="padding:15px;" value="" align=center>
+      <span>
+        <%= el.ordernumber %>
+      </span>
+    </div>
+    <div class="col-sm-2" style="padding:15px;" value="" align=center>
+      <span>
+        <%= el.orderdate %>
+      </span>
+    </div>
+    <div class="col-sm-2" style="padding:15px;" value="" align=center>
+      <span>
+        <%= el.companyname %></span>
+    </div>
+
+    <div class="col-sm-2" style="padding:15px;" value="" align=center>
+      <span>
+        <%= el.deliverydate %>
+      </span>
+    </div>
+    <div class="col-sm-2" style="padding:15px;" value="" align=center>
+      <span>
+
+      </span>
+    </div>
+    <div class="col-sm-2" style="padding:5px" value="" align=center>
+      <span>
+        <form method="POST">
+          <div class="w3-show-inline-block">
+            <div class="w3-bar" style="inline-size: max-content;">
+              <a href="#" data-toggle="tooltip" title="Edit Sale Order"> <button type="submit" class="btn" formaction="../company/update/<%= el._id %>"><i
+                    class="fa fa-edit" style="font-size:20px;color:black; "></i></button></a>
+              <a href="#" data-toggle="tooltip" title="Delete Sale Order"> <button type="submit" class="btn" formaction="../orders/delete/<%= el._id %>">
+                  <i class="fa fa-remove" style="font-size:20px;color:red; "></i></button></a>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>
+  <% }) %>
+
+
+  <p></p>
+  </form>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+
+<% include ../partial/footer %>

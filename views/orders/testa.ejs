@@ -1,0 +1,104 @@
+<% include ../partial/header %>
+
+<h2>Sales Home</h2>
+
+<head>
+  <style>
+    body {
+      position: relative;
+    }
+
+    .affix {
+      top: 20px;
+      z-index: 9999 !important;
+    }
+
+    /* div.col-sm-9 div {
+        height: 250px;
+        font-size: 28px;
+      } */
+    #section1 {
+      background-color: floralwhite;
+    }
+
+    #section2 {
+      background-color: floralwhite;
+    }
+
+    #section3 {
+      background-color: floralwhite;
+    }
+
+    #section41 {
+      background-color: floralwhite;
+    }
+
+    #section42 {
+      background-color: floralwhite;
+    }
+
+    @media screen and (max-width: 810px) {
+
+      #section1,
+      #section2,
+      #section3,
+      #section41,
+      #section42 {
+        margin-left: 150px;
+      }
+    }
+  </style>
+</head>
+
+<div class="container">
+  <div class="row">
+    <nav class="col-sm-2" id="myScrollspy">
+      <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+        <li><a href="#section1" style="color: black; font-size: 18px">Latest Orders</a></li>
+        <li><a href="#section2" style="color: black; font-size: 18px">Pending Orders</a></li>
+        <li><a href="#section3" style="color: black; font-size: 18px"> Order Statistics</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: black; font-size: 14px">Stock
+            Requirement <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#section41">Pending Orders</a></li>
+            <li><a href="#section42">Min Level Stock</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="col-sm-9">
+      <div id="section1">
+        <h2 style="padding: 10px 10px">Orders Received</h2>
+        <p style="padding: 10px 10px;  border: 2px solid orange;
+            border-radius: 8px;">This is last 7 days
+          orders received/dispatched information</p>
+      </div>
+      <div id="section2">
+        <h2 style="padding: 10px 10px">Pending Orders</h2>
+        <p style="padding: 10px 10px;  border: 2px solid orange;
+            border-radius: 8px;">This is pending
+          orders information</p>
+      </div>
+      <div id="section3">
+        <h2 style="padding: 10px 10px">Sale Order Statistics</h2>
+        <p style="padding: 10px 10px;  border: 2px solid orange;
+            border-radius: 8px;">max orders by which
+          company. max orders in which month. max orders by item.</p>
+      </div>
+      <div id="section41">
+        <h2 style="padding: 10px 10px">Stock Requirement</h2>
+        <p style="padding: 10px 10px;  border: 2px solid orange;
+            border-radius: 8px;">requirement against
+          pending orders</p>
+      </div>
+      <div id="section42">
+        <h2 style="padding: 10px 10px">Section 4-2</h2>
+        <p style="padding: 10px 10px;  border: 2px solid orange;
+            border-radius: 8px;">stock in danger level</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partial/footer %>

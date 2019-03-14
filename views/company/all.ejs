@@ -1,0 +1,122 @@
+<% include ../partial/header %>
+
+<div class="container-fluid" style="background-color:floralwhite; ">
+    <center>
+        <h2>
+            All Companies
+        </h2>
+    </center>
+    <form method="post" action="/company/findcompany">
+
+
+        <div class="row" style="background-color:#EAF2F8; font-size:20px; padding:10px;">
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <input type="text" class="form-control form-control-sm" id="cname" name="cname" placeholder="Search by Name"></span>
+            </div>
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <input type="text" class="form-control form-control-sm" id="state" name="state" placeholder="Search by State"></span>
+            </div>
+            <div class="col-sm-2" value="" align=center>
+                <span>
+                    <input type="text" class="form-control form-control-sm" id="city" name="city" placeholder="Search by City">
+                </span>
+            </div>
+            <div class="col-sm-6" value="" align=center>
+                <span>
+                    <button type="submit" class="btn btn-primary">Find</button>
+                </span>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="row" style="background-color:#F5B041; font-size:18px; padding:5px;">
+        <div class="col-sm-2" value="" align=center>
+            <span>Company
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span>State
+
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span>City
+            </span>
+        </div>
+        <div class="col-sm-2" value="" align=center>
+            <span>
+            </span>
+        </div>
+        <div class="col-sm-3" value="" align=center>
+            <span>
+            </span>
+        </div>
+    </div>
+
+    <% data.forEach(function(el, index) {%>
+    <div class="row" style="background-color:#FDFEFE;border-bottom: 1px solid orange; font-size:16px;">
+        <div class="col-sm-2" align="center" style="padding: 15px">
+            <span>
+                <%= el.companyname %>
+            </span>
+        </div>
+        <div class="col-sm-2" align=center style="padding: 15px">
+            <span>
+                <%= el.state %>
+            </span>
+        </div>
+        <div class="col-sm-2" align=center style="padding: 15px">
+            <span>
+                <%= el.city %>
+            </span>
+        </div>
+        <div class="col-sm-3" align=center style="padding: 5px">
+            <span>
+                <div class="col-sm-2" align=center>
+                    <form method="POST">
+                        <div class="w3-show-inline-block">
+                            <div class="w3-bar" style="inline-size: max-content;">
+
+                                <a href="#" data-toggle="tooltip" title="New Sale Order"> <button type="submit" class="btn"
+                                        formaction="../orders/sorder/<%= el._id %>" style="font-size:20px;color:#3498DB;">
+                                        <i class="fas fa-file-alt"></i></button></a>
+                                <a href="#" data-toggle="tooltip" title="All Orders"> <button type="submit" class="btn"
+                                        formaction="../company/companyorders/<%= el._id %>" style="font-size:20px;color:#3498DB;">
+                                        <i class="fas fa-database"></i></button></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+        <div class="col-sm-3" align=center style="padding: 5px">
+            <span>
+                <div class="col-sm-2" align=center>
+                    <form method="POST">
+                        <div class="w3-show-inline-block">
+                            <div class="w3-bar" style="inline-size: max-content;">
+                                <a href="#" data-toggle="tooltip" title="Edit Company Information"> <button type="submit"
+                                        class="btn" formaction="../company/update/<%= el._id %>" style="font-size:20px;color:black;">
+                                        <i class="fa fa-edit"></i></button></a>
+                                <a href="#" data-toggle="tooltip" title="Delete Company"> <button type="submit" class="btn"
+                                        formaction="../company/delete/<%= el._id %>" style="font-size:20px;color:red;">
+                                        <i class="fa fa-remove"></i></button></a>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+    <% }) %>
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<% include ../partial/footer %>

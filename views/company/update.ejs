@@ -1,0 +1,209 @@
+<% include ../partial/header %>
+
+<div class="container-fluid" style="background-color:floralwhite;">
+  <center>
+    <h2>
+      Update Company :-
+      <%= data.companyname %>
+    </h2>
+  </center>
+
+  <form method="POST">
+    <div class="row">
+      <div class="col-sm-3" value="" align=left>
+        <span>Company
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="text" value="<%= data.companyname %>" class="form-control form-control-sm" name="cname" id="cname"
+            placeholder="Company Name" required>
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="number" value="<%= data.companycontact %>" class="form-control form-control-sm" name="cnum"
+            id="cnum" placeholder="Company Contact Number">
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="email" value="<%= data.companyemail %>" class="form-control form-control-sm" name="cemail"
+            id="cemail" placeholder="Email-ID">
+        </span>
+      </div>
+
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3" value="" align=left>
+        <span>Contact Person 1
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="text" value="<%= data.contactperson1 %>" class="form-control form-control-sm" name="cp1name"
+            id="cp1name" placeholder="Contact Person Name" required>
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="number" value="<%= data.phoneno1 %>" class="form-control form-control-sm" name="cp1num" id="cp1num"
+            placeholder="Contact Number" required>
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="email" value="<%= data.email1 %>" class="form-control form-control-sm" name="cp1email" id="cp1email"
+            placeholder="Email-ID" required>
+        </span>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3" value="" align=left>
+        <span>Contact Person 2
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="text" value="<%= data.contactperson2 %>" class="form-control form-control-sm" name="cp2name"
+            id="cp2name" placeholder="Contact Person Name">
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="number" value="<%= data.phoneno2 %>" class="form-control form-control-sm" name="cp2num" id="cp2num"
+            placeholder="Contact Number">
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="email" value="<%= data.email2 %>" class="form-control form-control-sm" name="cp2email" id="cp2email"
+            placeholder="Email-ID">
+        </span>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3" value="" align=left>
+        <span>Address
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><select class="form-control form-control-sm" name="country" id="country" required value="<%= data.country %>">
+            <option value="<%= data.country %>">
+              <%= data.country %>
+            </option>
+            <option value="India">India</option>
+            <option value="United States of America">United States of America</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Iran">Iran</option>
+            <option value="Iraq">Iraq</option>
+            <option value="Qatar">Qatar</option>
+            <option value="Kuwait">Kuwait</option>
+            <option value="China">China</option>
+
+          </select> </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><select class="form-control form-control-sm" name="state" id="state" required value="<%= data.state %>">
+            <option value="<%= data.state %>">
+              <%= data.state %>
+            </option>
+            <option value="Delhi">Delhi</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Maharastra">Maharastra</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+            <option value="Telengana">Telengana</option>
+            <option value="Chhatisgarh">Chhatisgarh</option>
+            <option value="Assam">Assam</option>
+            <option value="Odisha">Odisha</option>
+            <option value="West Bengal">West Bengal</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          </select>
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><select class="form-control form-control-sm" name="city" id="city" required value="<%= data.city %>">
+            <option value="<%= data.city %>">
+              <%= data.city %>
+            </option>
+            <option value="Delhi">Delhi</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Maharastra">Maharastra</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+            <option value="Telengana">Telengana</option>
+            <option value="Chhatisgarh">Chhatisgarh</option>
+            <option value="Assam">Assam</option>
+            <option value="Odisha">Odisha</option>
+            <option value="West Bengal">West Bengal</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          </select></span>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3" value="" align=left>
+        <span>
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="text" class="form-control form-control-sm" name="sname" id="sname" placeholder="Street Name"
+            required value="<%= data.address1 %>"></span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="text" class="form-control form-control-sm" name="bname" id="bname" placeholder="Building Name"
+            value="<%= data.address2 %>">
+        </span>
+      </div>
+      <div class="col-sm-3" value="" align=center>
+        <span><input type="number" class="form-control form-control-sm" name="pcode" id="pcode" placeholder="Pin Code"
+            value="<%= data.pincode %>"></span>
+      </div>
+    </div>
+    <br>
+    <center>
+      <p>
+        <a href=""><button type="submit" class="btn btn-success" formaction="/company/updated/<%= data._id %>">Update</button></a>
+        <input type="reset" value="Cancel" class="btn btn-warning">
+      </p>
+    </center>
+  </form>
+
+</div>
+
+<% include ../partial/footer %>
