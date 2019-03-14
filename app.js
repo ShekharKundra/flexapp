@@ -26,10 +26,13 @@ app.use(session({
 	resave: false,
 	saveUninitialized: false
 }));
+
 // Adding flash for messaging 
 app.use(flash());
+
 // Adding title to each Page
 app.use(title());
+
 //adding some local variables for message
 app.use('/', function (req, res, next) {
 	//console.log('Request Url:' + req.url);
@@ -40,6 +43,7 @@ app.use('/', function (req, res, next) {
 	res.locals.company = req.flash("company");
 	next();
 });
+
 //for public folder to acessable all over the app
 app.use('/assets', express.static(__dirname + '/public'));
 
@@ -64,15 +68,12 @@ var orderselectmodel = mongoose.model("orderselect", require("./models/ordersele
 var backupordermodel = mongoose.model("backuporder", require("./models/backuporder")(mongoose));
 var stockcalcmodel = mongoose.model("stockcalc", require("./models/stockcalc")(mongoose));
 
-
 //routes
 app.use("/orders", require("./routes/orderRoutes")(bodyParser, ordermodel, orderselectmodel, backupordermodel, companymodel));
 app.use("/srrstock", require("./routes/srrRoutes")(bodyParser, srrmodel, backupsrrmodel, stockcalcmodel));
 app.use("/company", require("./routes/companyRoutes")(bodyParser, companymodel, backupcompanymodel, ordermodel));
 app.use("/requirements", require("./routes/reqRoutes")(bodyParser, orderselectmodel, ordermodel, stockcalcmodel));
 app.use("/", require("./routes/mainpageroutes")(bodyParser, ordermodel, srrmodel));
-
-
 
 //implementing https server
 https.createServer(httpsOptions, app).listen(port, function () {

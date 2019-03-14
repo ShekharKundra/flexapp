@@ -21,5 +21,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sumer Luthra",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShekharKundra/flexapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ShekharKundra/flexapp/issues"
+  },
+  "homepage": "https://github.com/ShekharKundra/flexapp#readme"
 }
