@@ -74,7 +74,7 @@ app.use("/", require("./routes/mainpageroutes")(bodyParser, ordermodel, srrmodel
 
 
 
-//implementing https
+//implementing https server
 https.createServer(httpsOptions, app).listen(port, function () {
 	console.log("easyflex bellow ms", port);
 });
