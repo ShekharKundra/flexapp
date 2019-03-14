@@ -1,0 +1,32 @@
+1. Sale order (populate) and submit 
+On submit = Material  Requirement calculation + display on requirements page
+(Material Requirement against Bill of Quantities)
+
+2. Sale Order page displayed after submit has 4 Buttons
+1. Dispatch - Full Sale Order Dispatch Page
+
+on Dispatch button Submit = Full Order quantities dispatched.
+Balance Stock Requirement against sale order quantities 
+Order Status : Completed
+Render New page on submit with order status changed to complete.
+
+2. Part Dispatch Page : Partial Sale Order dispatch page
+
+on Part dispatch button Submit = Render New page with sale Order and 
+Order quantity  Dispatch Quantity
+<input>             <input>
+
+On input of dispatch quantity :- Render Previous page of sale order as
+Order Status " Partial Dispatch Pending " with updated quantities under heading as Pending Quantity
+Balance Stock Requirement
+
+3. Hold / Cancel Order
+Render sale order page with status updated to Order on Hold
+Update Stock Requirement and only status changes.
+
+Render page with status as Order Cancelled
+Balance Stock Requirement.
+
+
++
+Login user part.
